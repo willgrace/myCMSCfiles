@@ -1,0 +1,234 @@
+body
+{
+background-color:white;
+background-image:url('/home/graycel/Desktop/Santos/pics/Mio_Pillow_by_sash0.jpg');
+background-repeat:no-repeat;
+background-position:center left;
+margin:auto;
+padding:auto;
+text-align:center;
+font-family:"Sans-serif", Arial, Verdana;
+} 
+
+#centercontainer
+{
+/*background-color:blue;*/
+width:951px;
+height:1500px;
+margin-left:345px;
+margin-bottom:20px;
+}
+
+#maincontainer
+{
+/*background-color:yellow;*/
+width:inherit;
+height:inherit;
+margin-top:10px;
+margin-bottom:20px;
+}
+
+#mainheader
+{
+background-image:url('/home/graycel/Desktop/Santos/pics/08wp8B.gif');
+background-repeat:no-repeat;
+background-position:top center;
+margin:auto;
+width:inherit;
+height:420px;     
+}
+
+div.img
+{
+margin-top:330px;
+/*margin-left:100px;*/
+height:auto;
+width:auto;
+float:left;
+text-align:center;
+}
+
+div.img img
+{
+display:inline;
+margin:auto;
+border:1px solid #ffffff;
+}
+
+div.img a:hover img
+{
+border:1px solid #0000ff;
+}
+
+#mainfootercenter
+{
+/*background-color:blue;*/
+margin:auto;
+width:inherit;
+height:1080px;
+}
+
+#Welcomeheader
+{
+background-image:url('/home/graycel/Desktop/Santos/pics/tumblr_l3j3go9q9Q1qzhfn7o1_500.jpg');
+background-repeat:repeat;
+background-position:top left;
+margin:auto;
+width:inherit;
+height:60px;
+text-align:left;
+}
+
+p.welcome
+{
+margin:20px 300px;
+padding:auto;
+color:#00000;
+background-color:white;
+text-align:center;
+font-size:12px;
+font-weight:bold;
+text-decoration:blink;
+}
+
+#insidefooter
+{
+/*background-color:yellow;*/
+margin:auto;
+width:inherit;
+height:1020px;
+}
+
+#insidebox
+{
+/*background-color:green;*/
+border:1px solid #000000;
+margin:auto;
+width:inherit;
+height:960px;
+}
+
+#leftbox
+{
+background-image:url('/home/graycel/Desktop/Santos/pics/Untitled-2.jpg');
+background-repeat:no-repeat;
+background-position:bottom left;
+/*background-color:white;*/
+margin:auto;
+width:669px;
+height:inherit;
+float: left;
+text-align:center;
+}
+
+p.insidecontent
+{
+color:#000000;
+font-size:12px;
+margin-left:45px;
+}
+
+p.insidecontent strong
+{
+color:fuchsia;
+margin-left:20px;
+}
+
+#leftheader
+{
+background-image:url('/home/graycel/Desktop/Santos/pics/2vhyzw0.jpg.gif');
+background-repeat:no-repeat;
+background-position:top left;
+margin:auto;
+width:inherit;
+height:150px;
+}
+
+#leftfooter
+{
+margin:auto;
+width:inherit;
+height:515px;
+}
+
+#left
+{
+/*background-color:black;*/
+margin:auto;
+width:310px;
+height:inherit;
+float:left;
+text-align:justify;
+}
+
+h3.head
+{
+color:red;
+font-decoration:none;
+text-align:center;
+}
+
+
+#right
+{
+background-image:url('/home/graycel/Desktop/Santos/pics/mirai-chan.gif');
+background-repeat:no-repeat;
+background-position:right bottom;
+width:310px;
+height:inherit;
+float:right;
+text-align:left;
+}
+
+#rightbox
+{
+background-image:url('/home/graycel/Desktop/Santos/pics/bg.gif');
+background-repeat:repeat;
+background-position:top left;
+margin:auto;
+width:280px;margin-bottom:20px;
+height:inherit;
+float:right;
+text-align:center;
+color:#556677;
+}
+
+p.rightcontent strong
+{
+color:#aa4466;
+font-style:oblique;
+}
+
+#pic img
+{
+margin-top:50px;
+border:2px double aqua;
+}
+
+#logo
+{
+margin-top:300px;
+text-align:center;
+}
+
+#logo img
+{
+margin:auto;
+border:1px solid #ffffff;
+}
+
+#logo a:hover img
+{
+border:1px solid #0000ff;
+}
+
+#footer
+{
+background-image:url('/home/graycel/Desktop/Santos/pics/tumblr_l3j3go9q9Q1qzhfn7o1_500.jpg');
+background-repeat:repeat;
+background-position:bottom left;
+margin:auto;
+padding:auto;
+width:inherit;
+height:60px;
+}

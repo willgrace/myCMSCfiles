@@ -1,0 +1,81 @@
+
+body {
+background-image:url('/home/user/Desktop/Santos/BRS.jpg');
+color:#FFFFFF;
+font-family:"Sans-serif", Arial, Verdana;
+font-size:13px;
+font-weight:bold;
+margin:15px;
+} 
+
+h1{
+background-color:#990000;
+color:#FFFFFF;
+text-align:center;
+letter-spacing:8px;
+font-family:"Sans-serif";
+font-style:italic;
+border-bottom-style:solid;
+border-color:#FF0000;
+border-width:10px;
+}
+
+h2{
+background-color:#00CC00;
+color:#FFFFFF;
+font-family:"Sans-serif";
+padding-left:20px;
+}
+
+h3{
+color:#FF99FF;
+font-family:"Sans-serif";
+}
+
+strong{
+font-style:italic;
+text-transform:uppercase;
+}
+
+p{
+text-align:justify;
+font-family:"Sans-serif", Arial, Verdana;
+font-size:12px;
+font-weight:normal;
+}
+
+a:link {color:#FF99FF;}  
+a:visited {color:#00FF00;}
+a:hover {color:#FF00FF;} 
+a:active {color:#0000FF;} 
+
+img{
+border:2px dashed #FF0000;
+height:auto;
+width:auto;
+}
+
+ul{
+color:#CC0000;
+font-style:italic;
+list-style-type: circle
+}
+ol{
+font-style:italic;
+color:#FF0000;
+}
+
+
+table, td, th
+{
+width: 300px;
+border:1px solid black;
+color:#000000;
+background-color: #FFCCFF;
+}
+
+
+strong{
+font-style:italic;
+color:#000000;
+}

@@ -1,0 +1,502 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*	Browser compatibility: Google Chrome only*/
+/*	Has some errors in other browsers like Internet Explorer and Mozilla firefox*/
+
+/*  SHIVA
+	Graycel Santos
+	BSCS 2009
+	E-4L
+*/
+
+html
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+	background-image: url('mikubg2.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	text-align: center;
+	color: #ffffff;
+}
+
+#center_box
+{
+	/*background-color:red;*/
+	margin-top: 360px;
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 50px;
+	padding: 0px;
+	width: 1100px;
+	height: 3350px;
+	color: #ffffff;
+	text-align: left;
+}
+
+.logo
+{
+	position: absolute;
+	left: 201px;
+	top: 123px;
+	width: 78px;
+	height: 126px;
+}
+
+
+h1
+{
+	font-size: 8px;
+	position: absolute;
+	left: 210px;
+	top: 220px;
+	color: #000000;
+}
+
+.tag
+{
+	font-size: 20px;
+	font-style: oblique;
+	color: #000;
+	position: absolute;
+	left: 517px;
+	top: 298px;
+	font-family: Arial Rounded MT Bold;
+}
+
+
+#header_box
+{
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 3300px;
+	color: #ffffff;
+	text-align: center;
+	cursor: url('point.png'),default;
+	
+}
+
+
+#main_box
+{
+	background-image: url('miku1.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin-right: 10px;
+	padding: 5px;
+	border: 10px solid #2A3F55;
+	min-height: 600px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	width: 825px;
+	height: 3290px;
+	color: #ffffff;
+	float: right;
+	font-family: "Lucida Console", Monaco, monospace;
+}
+
+#welcome_box
+{
+	background-image: url('top.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 800px;
+	color: #ffffff;
+	text-align: center;
+	font-size: 15px;
+}
+
+.para
+{
+	text-align: justify;
+	font-size: 14px;
+	padding: 15px;
+}
+
+#subnavi
+{
+	background-image: url('sub1.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin-top: 50px;
+	padding: 0px;
+	width: inherit;
+	height: 130px;
+	color: #ffffff;
+	text-align: center;
+}
+
+h3
+{
+	padding-top: 4px;
+}
+
+a.down:link
+{
+	text-decoration: none;
+	color: #009;
+	font-size: 17px;
+	font-family: shruti;
+}
+
+a.down:hover
+{
+	background-color: #000000;
+	display: marker;
+	width: 100px;
+	color: #ffffff; 
+}
+
+a.navi:link
+{
+	text-decoration: none;
+	color: #0FF;
+	font-size: 16px;
+	font-family: Berlin Sans FB;
+}
+
+a.navi:visited
+{
+	text-decoration: none;
+	color: #09F;
+	font-size: 16px;
+	font-family: Berlin Sans FB;
+}
+
+
+a.navi:hover
+{
+	background-color: #000000;
+	display: marker;
+	width: 100px;
+	color: #ffffff; 
+}
+
+#content_box
+{
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 2500px;
+	color: #ffffff;
+}
+
+#head
+{
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 1630px;
+	color: #ffffff;
+}
+
+
+#group
+{
+	background-image: url('top2.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 640px;
+	color: #ffffff;
+	font-size: 15px;
+}
+
+
+
+h6
+{
+	padding: 0px;
+	margin: 0px;
+	
+}
+
+.pic
+{
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+
+#member
+{
+	
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: inherit;
+	height: 870px;
+	color: #ffffff;
+	text-align: justify;
+	font-size: 14px;
+	font-family: Gadget;
+}
+
+
+#mem1
+{
+	background-image: url('r.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 1px;
+	width: 269px;
+	height: inherit;
+	color :#ffffff;
+	float: left;
+	border-right: #09C dashed thin;
+	text-align: center;
+}
+
+#mem2
+{
+	background-image: url('j.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 1px;
+	width: 273px;
+	height: inherit;
+	color: #ffffff;
+	float: left;
+	border-right: #09C dashed thin;
+	text-align: center;
+}
+
+#mem3
+{
+	background-image: url('g.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 1px;	
+	width: 269px;
+	height: inherit;
+	color: #ffffff;
+	float: right;
+	text-align: center;
+}
+
+#footer_content
+{
+	
+	background-image: url('vocal.png');
+	background-position: bottom bottom;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 830px;
+	color: #ffffff;
+}
+
+#Extra
+{
+	background-image: url('top3.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 380px;
+	color: #ffffff;
+	text-align: justify;
+}
+
+
+#quotes
+{
+	margin: 0px;
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	width: 395px;
+	height: inherit;
+	color: #ffffff;
+	float: left;
+	text-align: left;
+}
+
+#trivia
+{
+	margin-top: 10px;
+	padding: 2px;
+	width: 395px;
+	height: inherit;
+	color: #ffffff;
+	float: right;
+	text-align: left;
+}
+
+#Connect
+{
+	background-image: url('top4.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 430px;
+	color: #ffffff;
+	text-align: justify;
+}
+
+#navi_box
+{
+	margin: 0px;
+	padding: 0px;
+	width: 220px;
+	height: 2000px;
+	color: #ffffff;
+	float: left;
+}
+
+#navihead
+{
+	background-image: url('tab.png');
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 290px;
+	text-align: center;
+}
+
+.order
+{
+	list-style-type: none;
+	margin: 8px;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+
+a.out:link
+{
+	color: #000;
+	text-decoration: none;
+	text-align: center;
+	display: compact;
+	cursor: help;
+	padding: 7px;
+	margin: 0px;
+	font-size: 18px;
+	font-family: digifaceWIDE;
+}
+
+a.out:visited
+{
+	color: #0FF;
+	text-decoration: none;
+	text-align: center;
+	display: compact;
+	cursor: help;
+	font-size: 15px;
+	font-family: digifaceWIDE;
+}
+
+a.out:hover
+{
+	color: #6FF;
+	font-family: calibri;
+}
+
+#navifoot
+{
+	background-image: url('top5.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 300px;
+}
+
+
+a.external:link
+{
+	padding-top: 50px;
+}
+
+
+a.external:hover
+{
+	border-style: solid;
+	border-color: #6FF;
+	padding: 2px;
+}
+
+
+#footer_box
+{
+	background-image: url('shiva.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	margin: 0px;
+	padding: 0px;
+	width: inherit;
+	height: 200px;
+	color: #ffffff;
+	font-family: "Courier New", Courier, monospace;
+}
+
+a.link:link
+{
+	text-decoration: none;
+	color: #3FF; 
+}
+
+a.link:visited
+{
+	text-decoration: none;
+	color: #09F;  
+}
+
+a.link:hover
+{
+	text-decoration: underline;
+	color: #00F;  
+}
+
+.foot
+{
+	margin: 10px;
+	padding-top: 50px;
+	text-align: center;
+	font-weight: bold;
+}
+
+h4
+{
+	font-weight: bolder;
+	font-family: digifaceWIDE;
+	font-size: 18px;
+	color: #3FF;
+}
+
+/*end of CSS codes ~ Graycel Santos from SHIVA group*/

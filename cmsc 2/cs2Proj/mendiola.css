@@ -1,0 +1,185 @@
+
+body {
+	margin:auto;
+	padding:15px;
+	font-family:"Arial Narrow", Arial, Sans-serif;
+	font-size:12px;
+	background-image:url('retro-red-variety-design.jpg');
+	text-align:center;
+}
+
+
+#center_box {
+	width:900px;
+
+}
+
+#welcome_box {
+	padding:5px;
+	border:5px inset #600000;
+	height:690px;
+	width:700px;
+	text-align:center;
+	font-family:"Courier New", Times, serif;
+	background-image:url('back.gif');
+	float:right;
+	color:#FF0066;
+}
+
+
+#subnavi {
+	text-align:center;
+}	
+	
+#group {
+	padding:5px;
+	border:5px inset #600000;
+	width:700px;	
+	height:610px;
+	background-image:url('back.gif');
+	font-family:"Courier New", Times, serif;
+	text-align:center;
+	float:right;
+	color:white;
+}
+
+#member {
+	padding:5px;
+	border:5px solid #CCCCCC;
+	width:700px;
+	height:910px;	
+	float:right;
+
+}
+
+#mem1 {
+	padding:5px;
+	border:5px solid #0066FF;
+	width:220px;
+	height:900px;
+	color:white;	
+}
+
+#mem2 {
+	padding:5px;
+	border:5px solid #CCCCCC;
+	width:220px;	
+	height:900px;
+	position:relative;
+	top:-920px;
+	left:230px;
+	color:white;	
+
+}
+
+#mem3 {
+	padding:5px;
+	border:5px solid #FF0066;
+	width:220px;	
+	height:900px;
+	position:relative;
+	top:-1840px;
+	left:460px;
+	color:white;
+}
+
+
+#quotes {
+	padding:5px;
+	border:5px inset #600000;
+	width:700px;	
+	font-family:"Courier New", Times, serif;
+	height:300px;
+	float:right;
+	color:#FF0066;
+	
+}
+
+#trivia {
+	padding:5px;
+	border:5px inset #600000;
+	width:700px;	
+	height:350px;
+	font-family:"Courier New", Times, serif;
+	float:right;
+	color:white;
+	
+}
+
+#Connect {
+	padding:5px;
+	border:5px inset #600000;
+	width:700px;	
+	height:650px;
+	float:right;
+	font-family:"Courier New", Times, serif;
+	color:#FF0066;
+	
+}
+
+#navi_box {
+	font-family:"Courier New", Times, serif;
+	float:left;
+	width:150px;
+	position:absolute;
+	top:290px;
+	left:26px;
+}
+
+#navihead {
+	padding:5px;
+	border:5px inset #600000;
+	width:150px;	
+	height:200px;	
+	background-image:url('back.gif');
+}
+
+#navifoot {
+	padding:5px;
+	border:5px inset #600000;	
+	height:300px;
+	background-image:url('back.gif');	
+	float:left;
+	width:150px;
+}
+
+#footer_box {
+	padding:5px;
+	width:900px;	
+	height:120px;
+	float:right;
+	font-family:"Courier New", Times, serif;
+	background-image:url('back.gif');
+	color:white;
+}
+
+h1 {
+	font-family:"Cooper Black";
+	font-size:60px;
+	text-align:center;
+	color:#33CC33;
+}
+
+h3 {
+	font-family:"Cooper Black";
+	color:#33CC33;
+	font-size:30px;	
+}
+
+h4 {
+	font-family:"Cooper Black";
+	text-align:center;
+	font-size:20px;
+	color:#FF0066;
+}
+
+h5 {
+	font-family:"Cooper Black";
+	font-size:25px;	
+	color:#33CC33;
+}
+
+p.tag {
+	font-family:"Courier New", Times, serif;
+	color:#FF0066;	
+}
