@@ -1,0 +1,339 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>TWO-DIMENSIONAL ARRAYS</title>
+</head><body>
+<a name="top"></a>
+<p><a href="http://www.macdonald.egate.net/CompSci/index.html">Back to DFS's C Page</a></p>
+<hr>
+<center><h1>TWO-DIMENSIONAL ARRAYS</h1></center>
+<p>Two-dimensional arrays are a little more complicated to
+use than one-dimensional ones. This page presents two methods
+of passing a pointer to a two-dimensional array to a function for processing.</p>
+<ul>
+<li>The <a href="#subscript">first method</a> uses subscript notation inside the function. 
+This method has the same disadvantage as in Pascal -- the function
+is essentially array specific in that the data types need to match.
+However, while in Pascal you need to have a programmer-defined 
+double-subscripted type
+which is used for both the array and the parameter in the called function,
+in C only the second subscript in each needs to match.
+A complete <a href="#program1">sample program</a> is provided below.<p></p>
+</li><li>The <a href="#offset">second method</a> uses typecasting in the function call 
+and a pointer with offsets inside the function. This method permits the
+programmer to use the same function to process information in 
+arrays with different dimensions.
+A complete <a href="#program2">sample program</a> is provided below.<p></p>
+</li></ul>
+
+<a name="subscript"></a>
+<center><h2>Subscript Notation</h2></center>
+<p>Consider an <em>int</em> array as declared below.</p>
+<pre>#define NUM_STUDENTS 5
+#define NUM_TESTS 4
+int grades[NUM_STUDENTS][NUM_TESTS];
+</pre>
+<ul>
+<li>By convention, the first subscript is understood to be for
+rows and the second for columns.
+</li><li>This array can hold up to 20 integer values, the product
+of the values used to declare the array.
+</li><li>As is usual in C,
+subscripts start with zero, so the subscripts range from 0 to 4
+for the rows and 0 to 3 for the columns.
+</li><li>If the system uses four bytes for an <em>int</em>, this array
+would use 80 bytes of RAM. All of the bytes are in consecutive
+memory locations, the first row occupying the first 20 bytes,
+the second the next 20, and so on.
+</li></ul>
+<p>The following table illustrates how the subscripts are specified
+for this array, which has five (5) rows and four (4) columns.</p>
+
+<table align="center" border="2" cellpadding="3">
+<tbody><tr align="center"> <td><pre>   </pre></td> <td><em>0</em></td> <td><em>1</em></td> <td><em>2</em></td> <td><em>3</em></td> </tr>
+<tr align="center"> <td><em>0</em></td> <td>[0][0]</td> <td>[0][1]</td> <td>[0][2]</td> <td>[0][3]</td> </tr>
+<tr align="center"> <td><em>1</em></td> <td>[1][0]</td> <td>[1][1]</td> <td>[1][2]</td> <td>[1][3]</td> </tr>
+<tr align="center"> <td><em>2</em></td> <td>[2][0]</td> <td>[2][1]</td> <td>[2][2]</td> <td>[2][3]</td> </tr>
+<tr align="center"> <td><em>3</em></td> <td>[3][0]</td> <td>[3][1]</td> <td>[3][2]</td> <td>[3][3]</td> </tr>
+<tr align="center"> <td><em>4</em></td> <td>[4][0]</td> <td>[4][1]</td> <td>[4][2]</td> <td>[4][3]</td> </tr>
+</tbody></table>
+<a name="init"></a>
+<h3>Array Initialization: Inline</h3>
+<p>To initialize all elements of the <em>grades</em> array to -1 (a number that is
+highly improbable for a grade), you could use a nested loop
+structure such as the following.</p>
+<pre>for( i = 0; i &lt; NUM_STUDENTS; i++)
+   for( j = 0; j &lt; NUM_TESTS; j++)
+      grades[i][j] = -1;
+</pre>
+<h3>Array Initialization: At Declaration</h3>
+<p>It is also possible to initialize elements of an array
+at the time of its declaration. The following declaration
+assigns values for three grades for each of the first two
+students in the array. Note that the values for a specific row
+are enclosed within their own pair of curly brackets.</p>
+<pre>   int grades[NUM_STUDENTS][NUM_TESTS] = { {55, 60, 65},
+                                           {95, 90, 85} };
+</pre>
+
+<p>It may facilitate your programming, if you keep track of
+how many elements in the array hold usable values. For this
+simple example, we can initialize two variables.</p>
+<pre>int num_students = 2;
+int num_tests = 3;
+</pre>
+<h3>Array Processing: Using Subscripts in a Function</h3>
+<p>Since, by definition, the name of any array is a pointer, we can
+call a function which returns the highest grade in the array
+as follows.</p>
+<pre>high_test = get_highest( grades, num_students, num_tests);
+</pre>
+<p>The second and third arguments allow the function to search only
+the elements which have been initialized.</p>
+<p>One of the ways of writing <em>get_highest()</em> uses subscript
+notation:</p>
+<pre>int get_highest(int a[][NUM_TESTS], int row, int col)
+/* Assumes that there is at least one element */
+{
+   int i, j;
+   int highest = a[0][0];
+
+   for( i = 0; i &lt; row; i++)
+      for( j = 0; j &lt; col; j++)
+         if ( a[i][j] &gt; highest)
+            highest = a[i][j];
+   return highest;
+}
+</pre>
+<p>It is necessary in this instance to specify the number of columns 
+in the array (the number of items in a row) so that the compiler can
+determine the offsets from the beginning of the array. Unlike with the
+<a href="http://www.macdonald.egate.net/CompSci/harray1.html#subscript">one-dimensional array algorithm</a>,
+where we avoided comparing the first element with itself, here the extra
+code required does not outweigh the simplicity of the above algorithm.</p>
+
+<a name="program1"></a>
+<h2>Sample Program 1</h2>
+<p>This is a complete program which initializes part of an array of integer
+grades at the time of its declaration with 6 values and then 
+calls a function to find, return, and print the highest grade. Note that
+the dimensions of the array have been changed from those used
+in the discussion above by altering the compiler directives.</p>
+<pre>#include &lt;stdio.h&gt;
+
+#define NUM_STUDENTS 25
+#define NUM_TESTS 10
+
+int get_highest(int a[][NUM_TESTS], int row, int col);
+
+int main()
+{
+   int grades[NUM_STUDENTS][NUM_TESTS] = { {55, 60, 65},
+                                           {85, 90, 95} };
+   int num_students = 2;
+   int num_tests = 3;
+   int high_test;
+   
+   high_test = get_highest( grades, num_students, num_tests);
+
+   printf("The highest score is %d.\n", high_test);
+   return 0;
+}
+
+int get_highest(int a[][NUM_TESTS], int row, int col)
+/* Assumes that there is at least one element */
+{
+   int i, j;
+   int highest = a[0][0];
+
+   for( i = 0; i &lt; row; i++)
+      for( j = 0; j &lt; col; j++)
+         if ( a[i][j] &gt; highest)
+            highest = a[i][j];
+   return highest;
+}
+</pre>
+
+<p><a href="#top">Back to Top</a>
+<a name="offset"></a>
+</p><center><h2>Pointer Notation with Offset</h2></center>
+<p>Consider the <em>int</em> array as declared below. It is the same as
+the one discussed above except for the slight modification of the
+identifiers. This change was made so that we can have a second array
+which will be declared with different dimensions.</p>
+<pre>#define NUM_STUDENTS1 5
+#define NUM_TESTS1 4
+int grades1[NUM_STUDENTS1][NUM_TESTS1];
+</pre>
+<p>The following table illustrates the offsets of the elements from the
+start of this array, 
+which has five (5) rows and four (4) columns.
+ The italicized numbers are 
+the subscripts for the rows and columns.</p>
+
+<table align="center" border="2" cellpadding="3">
+<tbody><tr align="center"> <td><pre>   </pre></td> <td><em>0</em></td> <td><em>1</em></td> <td><em>2</em></td> <td><em>3</em></td> </tr>
+<tr align="right"> <td align="center"><em>0</em></td> <td>0</td> <td>1</td> <td>2</td> <td>3</td> </tr>
+<tr align="right"> <td align="center"><em>1</em></td> <td>4</td> <td>5</td> <td>6</td> <td>7</td> </tr>
+<tr align="right"> <td align="center"><em>2</em></td> <td>8</td> <td>9</td> <td>10</td> <td>11</td> </tr>
+<tr align="right"> <td align="center"><em>3</em></td> <td>12</td> <td>13</td> <td>14</td> <td>15</td> </tr>
+<tr align="right"> <td align="center"><em>4</em></td> <td>16</td> <td>17</td> <td>18</td> <td>19</td> </tr>
+</tbody></table>
+<h3>Array Initialization: Inline</h3>
+<p>To initialize all elements of the <em>grades1</em> array to -1 (a number that is
+highly improbable for a grade), you could use a nested loop
+structure as was done <a href="#init">above</a> or do a cheat such as the 
+following.</p>
+<pre>for( i = 0; i &lt; NUM_STUDENTS1 * NUM_TESTS1; i++)
+      *((int *)grades1 + i) = -1;
+</pre>
+<p>This method takes advantage of the fact that <em>grades1</em>
+is a pointer constant for a two-dimensional array. It uses the
+loop control variable as the offset from the beginning of the array.
+The casting of the pointer constant fools the compiler into thinking
+that the array is one-dimensional. Since both our two-dimensional 
+<em>grade1</em> array and a one-dimensional array 
+capable of holding 20 <em>int</em>s would be stored using a total of 80 
+consecutive bytes of RAM, no harm is done by this trickery.</p>
+
+<h3>Array Initialization: Generalized Using a Function</h3>
+<p>However, since the code above is array specific, we may want to generalize
+by creating a function which will initialize any two-dimensional array
+of <em>int</em>s.</p>
+<pre>void init_int_array(int *a, int num_rows, int num_cols)
+{
+   int i;
+
+   for( i = 0; i &lt; num_rows * num_cols; i++)
+      *(a + i) = -1;
+}
+</pre>
+<p>Here we are using the generic variable name <em>a</em> which
+is a pointer to an <em>int</em>. 
+The loop control variable <em>i</em> is the offset into the array. 
+The call to this function for <em>grades1</em> would be:</p>
+<pre>    init_int_array( (int *)grades1, NUM_STUDENTS1, NUM_TESTS1);
+</pre>
+<p>Here we cast the pointer constant into a pointer to an integer,
+which matches the declaration in the function. The constants for the
+dimensions of the array are passed to <em>init_int_array()</em>
+to be used for the calculation of the total number of elements 
+in the array.</p>
+
+<h3>Array Processing: Generalized Using a Function</h3>
+<p>If all of the usable data is stored in the upper left corner of
+the array, it is a relatively simple matter to access the appropriate elements.
+The following call to <em>get_highest()</em> sends a casted pointer
+to the array, the number of columns in the array, and the bounds
+of the upper left corner where the data is.</p>
+<pre>   high_test1 = 
+      get_highest( (int *)grades1, NUM_TESTS1, num_students1, num_tests1);
+</pre>
+<p>The code for the function which follows illustrates the power
+of pointers and offsets in the C language. 
+While we may wish to view a list of items as
+a number of sub-lists, the items are stored in the computer in
+consecutive memory locations. We can use pointer arithmetic to
+convert our two-dimensional perception of reality to the linear
+view dictated by how RAM is utilized. The four arguments passed by
+the function call above are sufficient for this purpose. 
+</p><ol>
+<li>The pointer constant <em>grades1</em> provides the array's 
+starting point in RAM.
+</li><li><em>NUM_TESTS1</em> provides the maximum number of possible 
+items in the sub-list. 
+</li><li><em>num_students1</em> provides the number of rows to be checked.
+</li><li><em>num_tests1</em> provides the number of columns to be checked.
+</li></ol>
+<p>The following expression can be used to access an element of the array.</p>
+<pre>  *(a + i*cols + j)
+</pre>
+<ol>
+<li><em>a</em>, which remains constant, points at the zeroth element of the list.
+</li><li><em>cols</em>, which remains constant, is the number of columns in a row. 
+</li><li><em>i</em> ranges from 0 to one less than the number of rows to be searched.
+</li><li><em>j</em> ranges from 0 to one less than the number of columns to be searched.
+</li></ol>
+<p>With <em>a</em> remaining constant, it can be seen that <em>i*cols + j</em>
+provides the offset from the beginning of the list.</p>
+<p>Here is a complete function which can be used to return the largest 
+<em>int</em> in a portion of a two-dimensional array of any size.</p>
+<pre>int get_highest(int *a, int cols, int row, int col)
+/* Assumes that the elements with usable values are
+   in the upper left corner of the array as 
+   delimited by row and col;
+   cols is the number of columns in the array passed */
+{
+   int i, j;
+   int highest = *a;
+
+   for( i = 0; i &lt; row; i++)
+      for( j = 0; j &lt; col; j++)
+         if ( *(a + i*cols + j) &gt; highest)
+            highest = *(a + i*cols + j);
+   return highest;
+}
+</pre>
+<a name="program2"></a>
+<h2>Sample Program 2</h2>
+<p>This is a program which initializes parts of two arrays of integer
+grades at the time of their declaration, each with 6 values. Then it
+calls a function to find, return, and print the highest grade
+in each of the two arrays.</p>
+<pre>#include &lt;stdio.h&gt;
+
+#define NUM_STUDENTS1 25
+#define NUM_TESTS1 10
+#define NUM_STUDENTS2 15
+#define NUM_TESTS2 8
+
+int get_highest(int *a, int cols, int row, int col);
+
+int main()
+{
+   int grades1[NUM_STUDENTS1][NUM_TESTS1] = { {55, 60, 65},
+                                              {85, 90, 95} };
+   int num_students1 = 2;
+   int num_tests1 = 3;
+   int high_test1;
+
+   int grades2[NUM_STUDENTS2][NUM_TESTS2] = { {55, 60},
+                                              {85, 90},
+                                              {75, 70} };
+   int num_students2 = 3;
+   int num_tests2 = 2;
+   int high_test2;
+   
+   high_test1 = 
+      get_highest( (int *)grades1, NUM_TESTS1, num_students1, num_tests1);
+   printf("The highest score in the first class is %d.\n", high_test1);
+
+   high_test2 = 
+      get_highest( (int *)grades2, NUM_TESTS2, num_students2, num_tests2);
+   printf("The highest score in the second class is %d.\n", high_test2);
+
+   return 0;
+}
+
+int get_highest(int *a, int cols, int row, int col)
+/* Assumes that the elements with usable values are
+   in the upper left corner of the array as 
+   delimited by row and col;
+   cols is the number of columns in the array passed */
+{
+   int i, j;
+   int highest = *a;
+
+   for( i = 0; i &lt; row; i++)
+      for( j = 0; j &lt; col; j++)
+         if ( *(a + i*cols + j) &gt; highest)
+            highest = *(a + i*cols + j);
+   return highest;
+}
+</pre>
+<p><a href="#top">Back to Top</a>
+</p><hr>
+Created 12 Jan 1999<br>
+Modified 15 Jan 1999<br>
+© DFStermole 1999<br>
+</body></html>

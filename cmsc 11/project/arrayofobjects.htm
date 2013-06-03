@@ -1,0 +1,275 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="C, C++, pointer, function, Arrays, tutorial, programming">
+
+<meta name="description" content="This site offers C++ programming tutorials and links.">
+
+<meta http-equiv="Window-target" content="_top">
+
+<!-- base -->
+
+<script type="text/javascript" language="JavaScript">
+
+<!--
+
+if (top.frames.length!=0)
+
+	top.location=self.document.location;
+
+//-->
+
+</script>
+
+
+
+<title>C++ Examples</title>
+
+<link rel="stylesheet" type="text/css" href="arrayofobjects_files/Lessons.css">
+
+
+
+</head><body>
+
+
+
+<table width="730" border="0">
+
+  <tbody><tr>
+
+    <td width="100%"><script type="text/javascript"><!--
+
+google_ad_client = "pub-3968514660870014";
+
+google_ad_width = 728;
+
+google_ad_height = 90;
+
+google_ad_format = "728x90_as";
+
+google_ad_type = "text_image";
+
+google_ad_channel ="";
+
+//--></script>
+
+      <script type="text/javascript" src="arrayofobjects_files/show_ads.js">
+
+</script><script src="arrayofobjects_files/expansion_embed.js"></script><script src="arrayofobjects_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="arrayofobjects_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="660" border="0" cellpadding="0" cellspacing="0">
+
+  <tbody><tr>
+
+    <td width="73">
+
+      <p class="maintitle"><a href="http://www.functionx.com/cpp/index.htm"><img src="arrayofobjects_files/ftxlogo2.gif" alt="FunctionX - Practical Learning Logo" width="51" border="0" height="60"></a></p></td>
+
+    <td width="583">
+
+      <p class="maintitle">An Array of Objects</p></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan="2" width="658" bgcolor="#cc3300" height="2"></td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<p>This example show how to declare and use an array of an object</p>
+
+<pre>#include &lt;iostream&gt;
+using namespace std;
+
+struct Paper
+{
+public:
+    void GetDimensions();
+    void Properties();
+
+private:
+    double Perimeter() const;
+    double Area() const;
+    double Height;
+    double Width;
+};
+
+void Paper::GetDimensions()
+{
+    cout &lt;&lt; "Enter the dimensions of the label\n";
+    cout &lt;&lt; "Height: ";
+    cin &gt;&gt; Height;
+    cout &lt;&lt; "Width: ";
+    cin &gt;&gt; Width;
+}
+
+void Paper::Properties()
+{
+    cout &lt;&lt; "\n\tHeight    = " &lt;&lt; Height;
+    cout &lt;&lt; "\n\tWidth     = " &lt;&lt; Width;
+    cout &lt;&lt; "\n\tPerimeter = " &lt;&lt; Perimeter();
+    cout &lt;&lt; "\n\tArea      = " &lt;&lt; Area();
+    cout &lt;&lt; "\n\n";
+}
+
+double Paper::Perimeter() const
+{
+	return 2 + (Height * Width);
+}
+
+double Paper::Area() const
+{
+	return Height * Width;
+}
+
+void main()
+{
+    int Samples;
+    Paper Label[100];
+
+    cout &lt;&lt; "How many sample labels do you want? ";
+    cin &gt;&gt; Samples;
+
+    for(int i = 0; i &lt; Samples; ++i)
+        Label[i].GetDimensions();
+
+    cout &lt;&lt; "\n\nHere are the characteristics of your labels\n";
+    for(int j = 0; j &lt; Samples; ++j)
+    {
+        cout &lt;&lt; "Label No. " &lt;&lt; j;
+        Label[j].Properties();
+    }
+}</pre>
+
+<hr width="740" align="left" color="#ff9900">
+
+Here is an example of running the program:
+
+<pre>How many sample labels do you want? 2
+
+Enter the dimensions of the label
+Height: 3.25
+Width: 3.25
+
+Enter the dimensions of the label
+Height: 2.15
+Width: 4.55
+
+
+Here are the characteristics of your labels
+
+Label No. 0
+        Height    = 3.25
+        Width     = 3.25
+        Perimeter = 12.5625
+        Area      = 10.5625
+
+Label No. 1
+
+        Height    = 2.15
+        Width     = 4.55
+        Perimeter = 11.7825
+        Area      = 9.7825
+
+</pre>
+
+
+
+<table width="730" border="0">
+
+  <tbody><tr>
+
+    <td width="100%"><script type="text/javascript"><!--
+
+google_ad_client = "pub-3968514660870014";
+
+google_ad_width = 728;
+
+google_ad_height = 90;
+
+google_ad_format = "728x90_as";
+
+google_ad_type = "text_image";
+
+google_ad_channel ="";
+
+//--></script>
+
+      <script type="text/javascript" src="arrayofobjects_files/show_ads.js">
+
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="arrayofobjects_files/ads_002.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="740" border="0">
+
+  <tbody><tr>
+
+    <td colspan="3" width="100%" align="center" valign="middle">
+
+      <hr width="740" align="left" color="#ff9900">
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td width="34%" align="center" valign="middle"><a href="http://www.functionx.com/cpp/index.htm">C++
+
+      Tutorial</a></td>
+
+    <td width="33%" align="center" valign="middle"><font color="#ff0000">Copyright
+
+      © 2001 FunctionX, Inc.</font></td>
+
+    <td width="33%" align="center" valign="middle"></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan="3" width="100%" align="center" valign="middle">
+
+      <hr width="740" align="left" color="#ff9900">
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+</body></html>

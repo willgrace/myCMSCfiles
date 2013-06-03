@@ -1,0 +1,277 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+<meta http-equiv="Content-Language" content="en-us">
+
+
+
+
+
+
+
+<meta name="keywords" content="C, C++, pointer, function, Arrays, tutorial, programming">
+
+<meta name="description" content="This site offers C++ programming tutorials and links.">
+
+<meta http-equiv="Window-target" content="_top">
+
+<!-- base -->
+
+<script type="text/javascript" language="JavaScript">
+
+<!--
+
+if (top.frames.length!=0)
+
+	top.location=self.document.location;
+
+//-->
+
+</script>
+
+
+
+<title>C++ Examples</title>
+
+<link rel="stylesheet" type="text/css" href="ifelse1_files/exocpp.css">
+
+<script language="JavaScript" src="ifelse1_files/cppscript.htm"></script>
+
+</head><body>
+
+
+
+<table width="730" border="0">
+
+  <tbody><tr>
+
+    <td width="100%"><script type="text/javascript"><!--
+
+google_ad_client = "pub-3968514660870014";
+
+google_ad_width = 728;
+
+google_ad_height = 90;
+
+google_ad_format = "728x90_as";
+
+google_ad_type = "text_image";
+
+google_ad_channel ="";
+
+//--></script>
+
+      <script type="text/javascript" src="ifelse1_files/show_ads.js">
+
+</script><script src="ifelse1_files/expansion_embed.js"></script><script src="ifelse1_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="ifelse1_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="660" border="0" cellpadding="0" cellspacing="0">
+
+  <tbody><tr>
+
+    <td width="73">
+
+      <p class="maintitle"><a href="http://www.functionx.com/cpp/index.htm"><img src="ifelse1_files/ftxlogo2.gif" alt="FunctionX - Practical Learning Logo" width="51" border="0" height="60"></a></p></td>
+
+    <td width="583">
+
+      <p class="maintitle">C++ Examples: If-Else</p></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan="2" width="658" bgcolor="#0000ff" height="2"></td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<hr width="740" align="left" color="#ff9900">
+
+
+
+<table width="740" border="0" cellpadding="0" cellspacing="0">
+
+  <tbody><tr>
+
+    <td width="59" valign="top"><font color="#ff0000"><b>Exercise</b></font></td>
+
+    <td width="1" bgcolor="#ff9900" valign="top"></td>
+
+    <td width="20" valign="top"></td>
+
+    <td> The LeVan Car Rental company charges $0.25/mile if the total mileage does
+
+not exceed 100. If the total mileage is over 100, the company charges $0.25/mile
+
+for the first 100 miles, then it charges $0.15/mile for any additional mileage
+
+over 100.
+
+      <p>Write a program so that if the clerk enters the number of miles, the
+
+      program would display the total price owed.</p></td>
+
+  </tr>
+
+</tbody></table>
+
+<br>
+
+<table width="700" border="0" cellpadding="0" cellspacing="0">
+
+  <tbody><tr>
+
+    <td width="100%"><font color="#ff0000">Source File</font></td>
+
+  </tr>
+
+  <tr>
+
+    <td width="100%" bgcolor="#ff0000" height="1"></td>
+
+  </tr>
+
+</tbody></table>
+
+<pre>#include &lt;iostream&gt;
+using namespace std;
+
+void main()
+{
+    unsigned int Miles;
+    const double LessThan100 = 0.25;
+    const double MoreThan100 = 0.15;
+    double PriceLessThan100, PriceMoreThan100, TotalPrice;
+
+    cout &lt;&lt; "Enter the number of miles: ";
+    cin &gt;&gt; Miles;
+
+    if(Miles &lt;= 100)
+    {
+        PriceLessThan100 = Miles * LessThan100;
+        PriceMoreThan100 = 0;
+    }
+    else
+    {
+        PriceLessThan100 = 100 * LessThan100;
+        PriceMoreThan100 = (Miles - 100) * MoreThan100;
+    }
+
+    TotalPrice = PriceLessThan100 + PriceMoreThan100;
+
+    cout &lt;&lt; "\nTotal Price = $" &lt;&lt; TotalPrice &lt;&lt; "\n\n";
+}</pre>
+
+<hr width="740" align="left" color="#ff9900">
+
+Here is an example of running the program:<br>
+
+&nbsp;
+
+<table width="500" bgcolor="#f2f2f2" border="1" cellpadding="0" cellspacing="0">
+
+  <tbody><tr>
+
+    <td width="100%">Enter the number of miles: 75<br>
+
+      <br>
+
+      Total Price = $18.75<br>
+
+      <br>
+
+      Press any key to continue</td>
+
+  </tr>
+
+</tbody></table>
+
+<table width="730" border="0">
+
+  <tbody><tr>
+
+    <td width="100%"><script type="text/javascript"><!--
+
+google_ad_client = "pub-3968514660870014";
+
+google_ad_width = 728;
+
+google_ad_height = 90;
+
+google_ad_format = "728x90_as";
+
+google_ad_type = "text_image";
+
+google_ad_channel ="";
+
+//--></script>
+
+      <script type="text/javascript" src="ifelse1_files/show_ads.js">
+
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="ifelse1_files/ads_002.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="740" border="0">
+
+  <tbody><tr>
+
+    <td colspan="3" width="100%" align="center" valign="middle">
+
+      <hr width="740" align="left" color="#ff9900">
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td width="34%" align="center" valign="middle"><a href="http://www.functionx.com/cpp/index.htm">C++
+
+      Tutorial</a></td>
+
+    <td width="33%" align="center" valign="middle"><font color="#ff0000">Copyright © 2001-2009 FunctionX, Inc.</font></td>
+
+    <td width="33%" align="center" valign="middle"></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan="3" width="100%" align="center" valign="middle">
+
+      <hr width="740" align="left" color="#ff9900">
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+</body></html>

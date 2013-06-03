@@ -1,0 +1,340 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="C, C++, pointer, function, Arrays, tutorial, programming">
+
+<meta name="description" content="This site offers C++ programming tutorials and links.">
+
+<meta http-equiv="Window-target" content="_top">
+
+<!-- base -->
+
+<script type="text/javascript" language="JavaScript">
+
+<!--
+
+if (top.frames.length!=0)
+
+	top.location=self.document.location;
+
+//-->
+
+</script>
+
+
+
+<title>C++ Examples</title>
+
+<link rel="stylesheet" type="text/css" href="anonymousclass_files/exocpp.css">
+
+<script language="JavaScript" src="anonymousclass_files/cppscript.htm"></script>
+
+</head><body>
+
+
+
+<table width="730" border="0">
+
+  <tbody><tr>
+
+    <td width="100%"><script type="text/javascript"><!--
+
+google_ad_client = "pub-3968514660870014";
+
+google_ad_width = 728;
+
+google_ad_height = 90;
+
+google_ad_format = "728x90_as";
+
+google_ad_type = "text_image";
+
+google_ad_channel ="";
+
+//--></script>
+
+      <script type="text/javascript" src="anonymousclass_files/show_ads.js">
+
+</script><script src="anonymousclass_files/expansion_embed.js"></script><script src="anonymousclass_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="anonymousclass_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="660" border="0" cellpadding="0" cellspacing="0">
+
+  <tbody><tr>
+
+    <td width="73">
+
+      <p class="maintitle"><a href="http://www.functionx.com/cpp/index.htm"><img src="anonymousclass_files/ftxlogo2.gif" alt="FunctionX - Practical Learning Logo" width="51" border="0" height="60"></a></p></td>
+
+    <td width="583">
+
+      <p class="maintitle">Anonymous Objects</p></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan="2" width="658" bgcolor="#0000ff" height="2"></td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="660" border="0">
+
+  <tbody><tr>
+
+    <td width="100%">
+
+      <p class="ParaJust">An anonymous class is one that doesn't have a name. In
+
+      the following example, both structures inside the TRectangle union are
+
+      anonymous classes:</p></td>
+
+  </tr>
+
+</tbody></table>
+
+    <table width="560" border="0">
+
+      <tbody><tr>
+
+        <td width="100%">
+
+          <pre>//---------------------------------------------------------------------------
+
+#include &lt;iostream&gt;
+
+#include &lt;conio&gt;
+
+using namespace std;
+
+#pragma hdrstop
+
+
+
+//---------------------------------------------------------------------------
+
+#pragma argsused
+
+// This rectangle can be identified by EITHER its location OR its dimensions
+
+union TRectangle
+
+{
+
+    struct // Location
+
+    {
+
+        int x1;
+
+        int y1;
+
+        int x2;
+
+        int y2;
+
+    };
+
+    struct // Dimensions
+
+    {
+
+        double Length;
+
+        double Height;
+
+    };
+
+};
+
+//---------------------------------------------------------------------------
+
+int main(int argc, char* argv[])
+
+{
+
+    TRectangle Recto;
+
+    char Choice;
+
+
+
+    cout &lt;&lt; "You want to identify your rectangle by "
+
+         &lt;&lt; "its location or its dimensions?";
+
+    cout &lt;&lt; "\n1 - Location";
+
+    cout &lt;&lt; "\n2 - Dimension";
+
+    cout &lt;&lt; "\nEnter your choice: ";
+
+    cin &gt;&gt; Choice;
+
+
+
+    if( Choice == '1' )
+
+    {
+
+        cout &lt;&lt; "\nEnter the location of the rectangle on a "
+
+             &lt;&lt; "Cartesian coordinate system\n";
+
+        cout &lt;&lt; "First point\n";
+
+        cout &lt;&lt; "X coordinate: "; cin &gt;&gt; Recto.x1;
+
+        cout &lt;&lt; "Y coordinate: "; cin &gt;&gt; Recto.y1;
+
+        cout &lt;&lt; "Second point\n";
+
+        cout &lt;&lt; "X coordinate: "; cin &gt;&gt; Recto.x2;
+
+        cout &lt;&lt; "Y coordinate: "; cin &gt;&gt; Recto.y2;
+
+        cout &lt;&lt; "\nThe rectangle spans from A("
+
+             &lt;&lt; Recto.x1 &lt;&lt; ", " &lt;&lt; Recto.y1 &lt;&lt; ") to B("
+
+             &lt;&lt; Recto.x2 &lt;&lt; ", " &lt;&lt; Recto.y2 &lt;&lt; ").\n";
+
+    }
+
+    else if( Choice == '2' )
+
+    {
+
+        cout &lt;&lt; "Enter the dimensions of the rectangle\n";
+
+        cout &lt;&lt; "Length: "; cin &gt;&gt; Recto.Length;
+
+        cout &lt;&lt; "Height: "; cin &gt;&gt; Recto.Height;
+
+        cout &lt;&lt; "\nDimensions of the rectangle";
+
+        cout &lt;&lt; "\nLength: " &lt;&lt; Recto.Length;
+
+        cout &lt;&lt; "\nHeight: " &lt;&lt; Recto.Height &lt;&lt; endl;
+
+    }
+
+    else
+
+        cout &lt;&lt; "\nInvalid Choice";
+
+
+
+    return 0;
+
+}
+
+//---------------------------------------------------------------------------</pre>
+
+        </td>
+
+      </tr>
+
+    </tbody></table>
+
+<hr width="740" align="left" color="#ff9900">
+
+Here is an example of running the program:<pre>You want to identify your rectangle by its location or its dimensions?
+
+1 - Location
+
+2 - Dimension
+
+Enter your choice: 1
+
+
+
+Enter the location of the rectangle on a Cartesian coordinate system
+
+First point
+
+X coordinate: -4
+
+Y coordinate: 2
+
+Second point
+
+X coordinate: 5
+
+Y coordinate: 1
+
+
+
+The rectangle spans from A(-4, 2) to B(5, 1).
+
+
+
+Press any key to continue...
+
+</pre>
+
+
+
+<table width="740" border="0">
+
+  <tbody><tr>
+
+    <td colspan="3" width="100%" align="center" valign="middle">
+
+      <hr width="740" align="left" color="#ff9900">
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td width="34%" align="center" valign="middle"><a href="http://www.functionx.com/cpp/index.htm">C++
+
+      Tutorial</a></td>
+
+    <td width="33%" align="center" valign="middle"><font color="#ff0000">Copyright
+
+      © 2001 FunctionX, Inc.</font></td>
+
+    <td width="33%" align="center" valign="middle"></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan="3" width="100%" align="center" valign="middle">
+
+      <hr width="740" align="left" color="#ff9900">
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+</body></html>

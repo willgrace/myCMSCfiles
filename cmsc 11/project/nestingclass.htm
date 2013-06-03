@@ -1,0 +1,504 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="C, C++, pointer, function, Arrays, tutorial, programming">
+
+<meta name="description" content="This site offers C++ programming tutorials and links.">
+
+<meta http-equiv="Window-target" content="_top">
+
+<!-- base -->
+
+<script type="text/javascript" language="JavaScript">
+
+<!--
+
+if (top.frames.length!=0)
+
+	top.location=self.document.location;
+
+//-->
+
+</script>
+
+
+
+<title>C++ Examples</title>
+
+<link rel="stylesheet" type="text/css" href="nestingclass_files/exocpp.css">
+
+<script language="JavaScript" src="nestingclass_files/cppscript.htm"></script>
+
+</head><body>
+
+
+
+<table width="730" border="0">
+
+  <tbody><tr>
+
+    <td width="100%"><script type="text/javascript"><!--
+
+google_ad_client = "pub-3968514660870014";
+
+google_ad_width = 728;
+
+google_ad_height = 90;
+
+google_ad_format = "728x90_as";
+
+google_ad_type = "text_image";
+
+google_ad_channel ="";
+
+//--></script>
+
+      <script type="text/javascript" src="nestingclass_files/show_ads.js">
+
+</script><script src="nestingclass_files/expansion_embed.js"></script><script src="nestingclass_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="nestingclass_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="660" border="0" cellpadding="0" cellspacing="0">
+
+  <tbody><tr>
+
+    <td width="73">
+
+      <p class="maintitle"><a href="http://www.functionx.com/cpp/index.htm"><img src="nestingclass_files/ftxlogo2.gif" alt="FunctionX - Practical Learning Logo" width="51" border="0" height="60"></a></p></td>
+
+    <td width="583">
+
+      <p class="maintitle">Class Nesting</p></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan="2" width="658" bgcolor="#0000ff" height="2"></td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="660" border="0">
+
+  <tbody><tr>
+
+    <td width="100%">
+
+      <p class="ParaJust">The C++ language allows you to create a class inside
+
+      of another. This technique is referred to as nesting. At the time of this
+
+      writing, nesting a class B inside of a class A doesn't give any access
+
+      privilege of class A' member variables and methods to class B. Therefore,
+
+      there is no major advantage to do it, only a matter of convenience and
+
+      probably personal preference and opinion. It is said that the next C++
+
+      standard will allow a nested class B to have access to the private member
+
+      variables and methods of the nesting class A.</p>
+
+      <p class="ParaJust">(As you can see, this program was created in Borland
+
+      C++ Builder. If you are using another compiler, remove the #pragma and
+
+      probably the conio lines)</p></td>
+
+  </tr>
+
+</tbody></table>
+
+    <table width="560" border="0">
+
+      <tbody><tr>
+
+        <td width="100%">
+
+          <pre>//---------------------------------------------------------------------------
+
+#include &lt;iostream&gt;
+
+#include &lt;conio&gt;
+
+using namespace std;
+
+#pragma hdrstop
+
+
+
+//---------------------------------------------------------------------------
+
+
+
+#pragma argsused
+
+const int Maximum = 100;
+
+//---------------------------------------------------------------------------
+
+class TListOfStudents
+
+{
+
+public:
+
+    class TStudent
+
+    {
+
+    private:
+
+        string FullName;
+
+        int    Age;
+
+        char   Gender;
+
+    public:
+
+        void   setFullName(const string Name) { FullName = Name; }
+
+        string getFullName() const { return FullName; }
+
+        void   setAge(const int a) { Age = a; }
+
+        int    getAge() const { return Age; }
+
+        void   setGender(const char g) { Gender = g; }
+
+        char   getGender() const { return Gender; }
+
+        TStudent();
+
+        TStudent(string FName, int a, char g);
+
+        inline virtual ~TStudent() {}
+
+    };
+
+private:
+
+    TStudent Item[Maximum];
+
+
+
+public:
+
+    TListOfStudents() : Count(0){}
+
+    inline ~TListOfStudents() {}
+
+    void Add(const TStudent&amp; d);
+
+    TStudent Retrieve(const int n);
+
+    int Count;
+
+};
+
+//---------------------------------------------------------------------------
+
+TListOfStudents::TStudent::TStudent()
+
+{
+
+    FullName = "";
+
+    Age      = 0.00;
+
+    Gender   = 'M';
+
+}
+
+//---------------------------------------------------------------------------
+
+TListOfStudents::TStudent::TStudent(string FName, int a, char g)
+
+{
+
+    FullName = FName;
+
+    Age      = a;
+
+    Gender   = g;
+
+}
+
+//---------------------------------------------------------------------------
+
+void __fastcall TListOfStudents::Add(const TStudent&amp; d)
+
+{
+
+    if( Count &lt; Maximum )
+
+    {
+
+	Item[Count] = d;
+
+	Count++;
+
+    }
+
+}
+
+//---------------------------------------------------------------------------
+
+TListOfStudents::TStudent TListOfStudents::Retrieve(const int n)
+
+{
+
+    return Item[n];
+
+}
+
+//---------------------------------------------------------------------------
+
+void __fastcall DisplayList(TListOfStudents &amp;List);
+
+void __fastcall CreateList(TListOfStudents &amp;List);
+
+//---------------------------------------------------------------------------
+
+int main(int argc, char* argv[])
+
+{
+
+    TListOfStudents ListOfItems;
+
+
+
+    CreateList(ListOfItems);
+
+	
+
+    DisplayList(ListOfItems);
+
+
+
+    return 0;
+
+}
+
+//---------------------------------------------------------------------------
+
+void CreateList(TListOfStudents &amp;ListOfItems)
+
+{
+
+	TListOfStudents::TStudent Pupil;
+
+
+
+	Pupil.setFullName("Harry Seamen");
+
+	Pupil.setAge(12);
+
+	Pupil.setGender('M');
+
+	ListOfItems.Add(Pupil);
+
+
+
+	Pupil.setFullName("Hermine Grand");
+
+	Pupil.setAge(14);
+
+	Pupil.setGender('F');
+
+	ListOfItems.Add(Pupil);
+
+
+
+	Pupil.setFullName("Ronald Hannah");
+
+	Pupil.setAge(18);
+
+	Pupil.setGender('M');
+
+	ListOfItems.Add(Pupil);
+
+
+
+	Pupil.setFullName("Johnny Hancock");
+
+	Pupil.setAge(16);
+
+	Pupil.setGender('M');
+
+	ListOfItems.Add(Pupil);
+
+
+
+}
+
+//---------------------------------------------------------------------------
+
+void DisplayList(TListOfStudents &amp;ListOfItems)
+
+{
+
+	cout &lt;&lt; "Full Name\tAge\tGender";
+
+	string Gender[] = { "Male", "Female", "Unknown" };
+
+
+
+	for(int i = 0; i &lt; ListOfItems.Count; i++)
+
+	{
+
+		cout &lt;&lt; "\n" &lt;&lt; ListOfItems.Retrieve(i).getFullName()
+
+		     &lt;&lt; "\t" &lt;&lt; ListOfItems.Retrieve(i).getAge()
+
+		     &lt;&lt; "\t";
+
+		switch(ListOfItems.Retrieve(i).getGender())
+
+		{
+
+		case 'm':
+
+		case 'M':
+
+			cout &lt;&lt; Gender[0];
+
+			break;
+
+		case 'f':
+
+		case 'F':
+
+			cout &lt;&lt; Gender[1];
+
+			break;
+
+		default:
+
+			cout &lt;&lt; Gender[2];
+
+		}
+
+	}
+
+}
+
+//---------------------------------------------------------------------------</pre>
+
+        </td>
+
+      </tr>
+
+    </tbody></table>
+
+<hr width="740" align="left" color="#ff9900">
+
+Here is an example of running the program:<pre>Full Name       Age     Gender
+
+Harry Seamen    12      Male
+
+Hermine Grand   14      Female
+
+Ronald Hannah   18      Male
+
+Johnny Hancock  16      Male</pre>
+
+
+
+<table width="730" border="0">
+
+  <tbody><tr>
+
+    <td width="100%"><script type="text/javascript"><!--
+
+google_ad_client = "pub-3968514660870014";
+
+google_ad_width = 728;
+
+google_ad_height = 90;
+
+google_ad_format = "728x90_as";
+
+google_ad_type = "text_image";
+
+google_ad_channel ="";
+
+//--></script>
+
+      <script type="text/javascript" src="nestingclass_files/show_ads.js">
+
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="nestingclass_files/ads_002.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="748" border="0">
+
+  <tbody><tr>
+
+    <td colspan="3" width="740" align="center" valign="middle">
+
+      <hr width="740" align="left" color="#ff9900">
+
+    </td>
+
+  </tr>
+
+  <tr>
+
+    <td width="166" align="center" valign="middle"><a href="http://www.functionx.com/cpp/index.htm">C++
+
+      Tutorial</a></td>
+
+    <td width="395" align="center" valign="middle"><font color="#ff0000"><a href="http://www.functionx.com/cpp/index.htm">Copyright
+
+      © 2001 FunctionX, Inc.</a></font></td>
+
+    <td width="167" align="center" valign="middle"></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan="3" width="740" align="center" valign="middle">
+
+      <hr width="740" align="left" color="#ff9900">
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+</body></html>

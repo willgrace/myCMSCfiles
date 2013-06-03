@@ -1,0 +1,11 @@
+teUrl='http://te.kontera.com/ContentLink/ContentLink?publisherId=2409&layout=adlinks&sId=142&cb=1267532102&creative=L&cn=ph';
+directAdsPrefetch=true;
+setMaxLinksOnPage(1);
+konaPostalCode="";
+pageTopicVector="";
+addContentLink(36,969800,'File',28,1,"","80013");
+
+konaTweakMode=8211;
+setKonaResults(1,1,"L|0|0|0|white|none&pRfr=http://www.functionx.com/cpp/examples/classmbr.htm&dc_aff_id=");
+onKonaReturn(1);
+

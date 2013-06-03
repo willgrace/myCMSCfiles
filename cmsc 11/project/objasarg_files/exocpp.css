@@ -1,0 +1,42 @@
+body         {
+  font-family: Verdana, Helvetica, Arial, 'Sans Serif';
+  color: #000000;
+  font-size: 10pt;
+  margin-top: 0pt;
+  margin-left: 0pt;
+  background-color: white }
+
+.headtitle   {
+  font-family: Verdana, Tahoma, Arial;
+  font-size: 10pt;
+  color: #FF0000;
+  font-weight: bold }
+
+.maintitle   {
+  font-family: Garamond, 'Times New Roman', Georgia;
+  font-size: 24pt;
+  color: #FF0000;
+  font-weight: bold;
+  text-align: Center }
+
+p    {
+  font-family: Verdana, Helvetica, Arial, Sans Serif;
+  text-align:justify;
+  color: #000000;
+  font-size:10pt;
+  font-style:regular; }
+
+pre          {
+  font-family: 'Courier New', Georgia, Garamond, Serif;
+  color: blue;
+  font-size: 10pt }
+
+li {
+  font-family: Verdana, Helvetica, Arial, Sans Serif;
+  color: #000000;
+  font-size:10pt;
+  font-style:regular;
+  margin-top: 6;
+  margin-bottom: 6 }
+
+td {	font-family: Verdana, Helvetica, Arial, Sans Serif;	color: #000000; 	font-size:10pt; 	font-style:regular; }	blockquote {	font-family: Verdana, Helvetica, Arial, Sans Serif;	color: #000000; 	font-size:10pt; 	font-style:regular; }span {	font-family: Verdana, Helvetica, Arial, Sans Serif;	color: #000000; 	font-size:10pt; 	font-style:regular; }.ParaJust { 	font-family: Verdana, Helvetica, Arial, MS Sans Serif;	color: #000000;	font-size: 10pt;	list-style-type: decimal;	text-align: Justify;	margin-top: 8;	margin-bottom: 10;	margin-left: 10 }.paratitle   {	font-family: Georgia, Garamond, 'Times New Roman', 'Serif';	font-size: 14pt;	color: red;	font-weight: bold;	margin-left: 4 }.CodeFormat { 	font-family: 'Courier New', Georgia, Garamond, Serif;	font-size: 10pt;	color: #0000FF;	list-style-type: decimal;	text-align: Justify;	margin-top: 8;	margin-bottom: 10;	margin-left: 10 }	a:link       { 	font-family: Verdana, Helvetica, Arial, Sans Serif;	color: red; 	font-size: 10pt; 	font-weight: bold; 	text-decoration: none }	a:alink {	font-family: Verdana, Helvetica, Arial, Sans Serif;	color: lightblue; 	font-size: 10pt; 	font-weight: bold; 	text-decoration: none }a:visited {	font-family: Verdana, Helvetica, Arial, Sans Serif;	color: fuchsia; 	font-size: 10pt; 	font-weight: bold; 	text-decoration: none }a:hover {	font-family: Verdana, Helvetica, Arial, Sans Serif;	color: green;	font-size: 10pt; 	font-style: bold; 	text-decoration: none }h1 {	color:blue; 	font-family:Georgia, Times New Roman, Courier New; 	font-size: 20pt; 	font-style: bold; 	text-decoration: none; }	h2 {	color:red;	font-family:Georgia, Times New Roman, Courier New;	font-size: 16pt; 	font-style: bold; 	text-decoration: none; }h3 {	color: red;	font-family: Verdana, Helvetica, Arial;	font-size: 12pt; 	font-style: bold; 	text-decoration: none; }h4           { 	color: #FF00FF;	font-family:Georgia, Times New Roman, Courier New;	font-size: 10pt; 	font-weight: bold;	text-decoration: underline }affiche      { text-indent: .5in; text-align: Justify; color: #0000FF; float: left;                margin-top: 5; margin-bottom: 5 }

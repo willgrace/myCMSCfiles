@@ -1,0 +1,402 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="C, C++, pointer, function, Arrays, tutorial, programming">
+
+<meta name="description" content="This site offers C++ programming tutorials and links.">
+
+<meta http-equiv="Window-target" content="_top">
+
+<!-- base -->
+
+<script type="text/javascript" language="JavaScript">
+
+<!--
+
+if (top.frames.length!=0)
+
+	top.location=self.document.location;
+
+//-->
+
+</script>
+
+
+
+<title>C++ Examples</title>
+
+<link rel="stylesheet" type="text/css" href="person_files/exocpp.css">
+
+<script language="JavaScript" src="person_files/cppscript.htm"></script>
+
+</head><body>
+
+
+
+<table width="730" border="0">
+
+  <tbody><tr>
+
+    <td width="100%"><script type="text/javascript"><!--
+
+google_ad_client = "pub-3968514660870014";
+
+google_ad_width = 728;
+
+google_ad_height = 90;
+
+google_ad_format = "728x90_as";
+
+google_ad_type = "text_image";
+
+google_ad_channel ="";
+
+//--></script>
+
+      <script type="text/javascript" src="person_files/show_ads.js">
+
+</script><script src="person_files/expansion_embed.js"></script><script src="person_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="person_files/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="660" border="0" cellpadding="0" cellspacing="0">
+
+  <tbody><tr>
+
+    <td width="73">
+
+      <p class="maintitle"><a href="http://www.functionx.com/cpp/index.htm"><img src="person_files/ftxlogo2.gif" alt="FunctionX - Practical Learning Logo" width="51" border="0" height="60"></a></p></td>
+
+    <td width="583">
+
+      <p class="maintitle">String Entering Example</p></td>
+
+  </tr>
+
+  <tr>
+
+    <td colspan="2" width="658" bgcolor="#0000ff" height="2"></td>
+
+  </tr>
+
+</tbody></table>
+
+
+
+<table width="660" border="0">
+
+  <tbody><tr>
+
+    <td width="100%">
+
+      <p class="ParaJust">This example shows how to perform data entry on
+
+      strings. The strings are simple array of characters and they are declared
+
+      as member variables of a class. The class provides accessory methods for
+
+      each member variable.</p></td>
+
+  </tr>
+
+</tbody></table>
+
+<p><font color="#ff0000">Header File: Person.h</font>
+
+</p><pre>//---------------------------------------------------------------------------
+#ifndef PersonH
+#define PersonH
+
+//---------------------------------------------------------------------------
+class TPerson
+{
+private:
+    char* FirstName;
+    char* LastName;
+    char* Address;
+    char* City;
+     char* State;
+    long  ZIPCode;
+
+public:
+    void  setFirstName(const char *FN);
+    char* getFirstName() const { return FirstName; }
+    void  setLastName(const char *LN);
+    char* getLastName() const { return LastName; }
+    char* FullName() const;
+    void  setAddress(const char *Adr);
+    char* getAddress() const { return Address; }
+    void  setCity(const char *CT);
+    char* getCity() const { return City; }
+    void  setState(const char *St);
+    char* getState() const { return State; }
+    void  setZIPCode(const long ZIP);
+    long  getZIPCode() const { return ZIPCode; }
+
+    TPerson();
+    TPerson(char *FName, char *LName, char *Adr,
+            char *Ct, char *St, long  ZIP);
+    TPerson(const TPerson &amp;Pers);
+    TPerson(char * FName, char * LName);
+    virtual ~TPerson();
+};
+//---------------------------------------------------------------------------
+#endif</pre>
+
+
+
+<p><font color="#ff0000">Source File: Person.cppfont&gt;
+
+</font></p><pre><font color="#ff0000">//---------------------------------------------------------------------------
+
+#i#include &lt;iostream&gt;
+using namespace std;
+
+#pragma hdrstop
+
+#include "Person.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+//---------------------------------------------------------------------------char *__fastcall TPerson::FullName() const
+{
+    char *FName = new char[40];
+    strcpy(FName, FirstName);
+    strcat(FName, " ");
+    strcat(FName, LastName);
+
+    return FName;
+}
+//---------------------------------------------------------------------------
+__fastcall TPerson::TPerson()
+    : ZIPCode(0)
+{
+    //TODO: Add your source code here  
+    FirstName = new char[20];
+    strcpy(FirstName, "John");
+    LastName  = new char[20];
+    strcpy(LastName, "Doe");
+    Address   = new char[40];
+    strcpy(Address, "123 Main Street Apt A");
+    City      = new char[32];
+    strcpy(City, "Great City");
+    State     = new char[30];
+    strcpy(State, "Our State");
+}
+//---------------------------------------------------------------------------
+__fastcall TPerson::TPerson(char * FName, char * LName)
+    : ZIPCode(0)
+{
+    //TODO: Add your source code here
+    FirstName = new char[strlen(FName) + 1];
+    strcpy(FirstName, FName);
+    LastName  = new char[strlen(LName) + 1];
+    strcpy(LastName, LName);
+    Address   = new char[40];
+    strcpy(Address, "123 Main Street Apt A");
+    City      = new char[32];
+    strcpy(City, "Great City");
+    State     = new char[30];
+    strcpy(State, "Our State");
+} 
+//---------------------------------------------------------------------------
+__fastcall TPerson::TPerson(char *FName, char *LName, char *Adr,
+                       char *Ct, char *St, long  ZIP)
+    : ZIPCode(ZIP)
+{                          
+    //TODO: Add your source code here  
+    FirstName = new char[strlen(FName) + 1];
+    strcpy(FirstName, FName);
+    LastName  = new char[strlen(LName) + 1];
+    strcpy(LastName, LName);
+    Address   = new char[40];
+    strcpy(Address, Adr);
+    City      = new char[32];
+    strcpy(City, Ct);
+    State     = new char[30];
+    strcpy(State, St);
+}
+//---------------------------------------------------------------------------
+__fastcall TPerson::TPerson(const TPerson &amp;Pers)
+    : ZIPCode(Pers.ZIPCode)
+{              
+    //TODO: Add your source code here
+    FirstName = new char[strlen(Pers.FirstName) + 1];
+    strcpy(FirstName, Pers.FirstName);
+    LastName  = new char[strlen(Pers.LastName) + 1];
+    strcpy(LastName, Pers.LastName);
+    Address   = new char[strlen(Pers.Address) + 1];
+    strcpy(Address, Pers.Address);
+    City      = new char[strlen(Pers.City) + 1];
+    strcpy(City, Pers.City);
+    State     = new char[strlen(Pers.State) + 1];
+    strcpy(State, Pers.State);
+}
+//---------------------------------------------------------------------------
+void __fastcall TPerson::setFirstName(const char *FN)
+{
+    strcpy(FirstName, FN);
+}
+//---------------------------------------------------------------------------
+void __fastcall TPerson::setLastName(const char *LN)
+{
+    strcpy(LastName, LN);
+}
+//---------------------------------------------------------------------------
+void __fastcall TPerson::setAddress(const char *Adr)
+{
+    strcpy(Address, Adr);
+}
+//---------------------------------------------------------------------------
+void  __fastcall TPerson::setCity(const char *CT)
+{
+    strcpy(City, CT);
+}
+//---------------------------------------------------------------------------
+void  __fastcall TPerson::setState(const char *St)
+{
+    strcpy(State, St);
+}
+//---------------------------------------------------------------------------
+void  __fastcall TPerson::setZIPCode(const long ZIP)
+{
+    ZIPCode = ZIP;
+}
+//---------------------------------------------------------------------------
+__fastcall TPerson::~TPerson()
+{
+    //TODO: Add your source code here
+    delete [] FirstName;
+    delete [] LastName;
+    delete [] Address;
+    delete [] City;
+    delete [] State;
+}
+//---------------------------------------------------------------------------</font></pre>
+
+
+
+<p><font color="#ff0000"><font color="#ff0000">Main File: Main.cpp</font>
+
+</font></p><pre><font color="#ff0000">////---------------------------------------------------------------------------
+#include &lt;iostream&gt;
+using namespace std;
+
+#agma hdrstop
+
+#i#include "Person.h"
+//---------------------------------------------------------------------------
+
+#pragma argsused
+
+TPerson ProcessRegistration();
+void DisplayInformation(const TPerson&amp;);
+//---------------------------------------------------------------------------
+int main(int argc, char* argv[])
+{
+    TPerson Employee = ProcessRegistration();
+    DisplayInformation(Employee);
+
+    return 0;
+}
+//---------------------------------------------------------------------------
+TPerson ProcessRegistration()
+{
+    char FName[12], LName[12];
+    char Addr[40], CT[32], St[30];
+    long ZC;
+
+    cout &lt;&lt; "Enter personal information\n";
+    cout &lt;&lt; "First Name: "; cin &gt;&gt; FName;
+    cout &lt;&lt; "Last Name:  "; cin &gt;&gt; LName;
+    cout &lt;&lt; "Address:    "; cin &gt;&gt; ws;
+    cin.getline(Addr, 40);
+    cout &lt;&lt; "City:       ";
+    cin.getline(CT, 32);
+    cout &lt;&lt; "State:      ";
+    cin.getline(St, 30);
+    cout &lt;&lt; "Zip Code:   "; cin &gt;&gt; ZC;
+
+    TPerson Pers(FName, LName, Addr, CT, St, ZC);
+    return Pers;
+}
+//---------------------------------------------------------------------------
+void DisplayInformation(const TPerson&amp; Pers)
+{
+    cout &lt;&lt; "\nEmployee Identification";
+    cout &lt;&lt; "\nFull Name: " &lt;&lt; Pers.FullName();
+    cout &lt;&lt; "\nAddress:   " &lt;&lt; Pers.getAddress();
+    cout &lt;&lt; "\nCity:      " &lt;&lt; Pers.getCity() &lt;&lt; ", "
+         &lt;&lt; Pers.getState() &lt;&lt; " " &lt;&lt; Pers.getZIPCode();
+}
+//---------------------------------------------------------------------------</font></pre>
+
+<hr width="740" align="left" color="#ff9900">
+
+<font color="#ff0000">Here is an example of running the program:</font><pre><font color="#ff0000">EnEnter personal information
+First Name: Jeremy
+Last Name:  Nguyen
+Address:    1466 16th Street #B
+City:       WashingtonState:      DC
+ZZip Code:   20004
+
+Employee Identification
+Full Name: Jeremy Nguyenddress:   1466 16th Street #B
+City:      Washington, DC 20004</font></pre>
+
+<table width="730" border="0">
+  <tbody><tr>
+    <td width="100%">
+   
+<script type="text/javascript"><!--
+google_ad_client = "pub-3968514660870014";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript" src="person_files/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="person_files/ads_002.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" width="728" frameborder="0" height="90" scrolling="no"></iframe></ins></ins>
+
+    </td>
+  </tr>
+</tbody></table>
+
+<table width="748" border="0">
+  <tbody><tr>
+    <td colspan="3" width="740" align="center" valign="middle">
+      <hr width="740" align="left" color="#ff9900">
+    </td>
+  </tr>
+  <tr>
+    <td width="248" align="center" valign="middle"><a href="http://www.functionx.com/cpp/index.htm">C++ Tutorial</a></td>
+    <td width="309" align="center" valign="middle"><font color="#ff0000"><a href="http://www.functionx.com/cpp/index.htm">Copyright © 2001-2009 FunctionX, Inc.</a></font></td>
+    <td width="171" align="center" valign="middle"></td>
+  </tr>
+  <tr>
+    <td colspan="3" width="740" align="center" valign="middle">
+      <hr width="740" align="left" color="#ff9900">
+    </td>
+  </tr>
+</tbody></table>
+
+</body></html>

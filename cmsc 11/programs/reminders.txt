@@ -1,0 +1,42 @@
+XXXXXXXX ############################################### XXXXXXXXX
+	   ###  ###  ##     ###  ######  ########    ##### 
+           ###  ###  ##  ######  ######  ######   ##   ### 
+	   ###       ##    ####  ######  ######  ####  ### 
+  	   ###  ###  ##  ######  ######  ######  ####  ### 
+	   ###  ###  ##  ######  ######  ######   ##   ### 
+   	   ###  ###  ##      ##      ##      ####    #####
+	   ###############################################
+		This is My Personal Phone Book.
+ A mini Phone Book where you can add your friends and family's contact
+		and any one who you want to contact.
+ Add their cellphone numbers, telephone numbers or even their e-mail address
+		so you can always keep in touch.
+**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++**
+	<==Important Reminders==>						
+													
+  'My Personal Phone Book' is a simple program that let's 
+  you enjoy some basic features of a real Phone book,	
+  but please keep in mind the following simple reminder...							
+														
+ -> Before you can use 'My Personal Phone Book', you must 
+create an account and log-in using it.
+	
+ -> You must always remember that it is CASE SENSITIVE; 
+If you entered a small or capitalized letter, write it aslo that
+way when you searched those names.
+				
+-> Do NOT leave blanks; Answer NONE to a question 
+that ask for your information if you don't have answers to it.	
+									
+-> you must not put spaces between names as instructed.
+If the contact you will add has a two seperated name,
+just enter one or do not seperate it using spaces.
+Same goes with the last name.
+			
+-> if the name of contact exists but you can't still find it,
+deleting all contact info and re-entering a new one is the best solution!
+The search option does not include the contacts in the old stored files.												
+														
+Thank you for reading and following this small reminders.							
+Enjoy 'My Personal Phone Book'!!	:D	
+**+++++++++++++++++++++++++++++++++++++++++++++++++++++++**
